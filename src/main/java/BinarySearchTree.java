@@ -20,4 +20,8 @@ public class BinarySearchTree {
         return 0;
     }
 
+    public void add(int key) {
+        this.getRoot().addKey(key);
+    }
+
 }

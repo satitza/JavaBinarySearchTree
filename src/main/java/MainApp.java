@@ -14,27 +14,20 @@ public class MainApp {
         System.out.println("Dept level : " + binarySearchTree.getTreeDept());
         printLine();
 
-        binarySearchTree.getRoot().addKey(1);
-        System.out.println("Parent of left : " + binarySearchTree.getRoot().getLeft().getParent());
-        System.out.println("Left of root : " + binarySearchTree.getRoot().getLeft().getKey());
-
-        binarySearchTree.getRoot().addKey(3);
-        System.out.println("Parent of right : " + binarySearchTree.getRoot().getRight().getParent());
-        System.out.println("Right of root : " + binarySearchTree.getRoot().getRight().getKey());
-
-        System.out.println("Dept level : " + binarySearchTree.getTreeDept());
-        printLine();
-
-        binarySearchTree.getRoot().getLeft().addKey(0);
-        System.out.println("Parent of left of left : " + binarySearchTree.getRoot().getLeft().getLeft().getParent());
-        System.out.println("Left of left of root : " + binarySearchTree.getRoot().getLeft().getLeft().getKey());
-        System.out.println("Left dept level : " + binarySearchTree.getRoot().getLeft().getDept());
-
-        binarySearchTree.getRoot().getRight().addKey(4);
-        System.out.println("Parent of right of right : " + binarySearchTree.getRoot().getRight().getRight().getParent());
-        System.out.println("Right of right of root : " + binarySearchTree.getRoot().getRight().getRight().getKey());
-        System.out.println("Right dept level : " + binarySearchTree.getRoot().getRight().getDept());
-
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.print("Enter key for insert into tree : ");
+            String command = scanner.nextLine();
+            if (command.equals("exit")) {
+                break;
+            } else if (command.equals("dept")) {
+                System.out.println("Dept level : " + binarySearchTree.getTreeDept());
+            } else {
+                int key = Integer.parseInt(command);
+                binarySearchTree.add(key);
+                System.out.println("Added : " + key + " to tree");
+            }
+        }
     }
 
     public static void printLine() {

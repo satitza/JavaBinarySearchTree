@@ -20,9 +20,8 @@ public class Node {
         return null;
     }
 
-    public int addLeft(int key) {
+    public void addLeft(int key) {
         this.left = new Node(this, key, this.dept + 1);
-        return this.dept + checkDept(this.left);
     }
 
     public Node getLeft() {
@@ -32,9 +31,9 @@ public class Node {
         return null;
     }
 
-    public int addRight(int key) {
+    public void addRight(int key) {
         this.right = new Node(this, key, this.dept + 1);
-        return this.dept + checkDept(this.right);
+
     }
 
     public Node getRight() {
@@ -44,22 +43,21 @@ public class Node {
         return null;
     }
 
-    public int addKey(int key) {
+    public void addKey(int key) {
         if (key != this.key) {
             if (key < this.key) {
-                return this.dept = this.addLeft(key);
+                if (this.getLeft() != null) {
+                    this.getLeft().addKey(key);
+                } else {
+                    this.addLeft(key);
+                }
             } else {
-                return this.dept = this.addRight(key);
+                if (this.getRight() != null) {
+                    this.getRight().addKey(key);
+                } else {
+                    this.addRight(key);
+                }
             }
-        }
-        return 0;
-    }
-
-    public int checkDept(Node node) {
-        if (node.getParent() == this && node.getDept() == this.key + 1) {
-            return 0;
-        } else {
-            return 1;
         }
     }
 
@@ -68,6 +66,13 @@ public class Node {
     }
 
     public int getDept() {
-        return this.dept;
+        if (this.getLeft() != null) {
+            return this.getLeft().getDept();
+        } else if (this.getRight() != null) {
+            return this.getRight().getDept();
+        } else {
+            return this.dept;
+        }
+
     }
 }
