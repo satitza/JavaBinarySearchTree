@@ -2,12 +2,8 @@ public class BinarySearchTree {
 
     private Node root;
 
-    public BinarySearchTree(int value) {
-        this.root = new Node(null, value, 1);
-    }
-
-    public void add(int value) {
-        this.getRoot().addValue(value);
+    public BinarySearchTree(int key) {
+        this.root = new Node(null, key, 1);
     }
 
     public Node getRoot() {
