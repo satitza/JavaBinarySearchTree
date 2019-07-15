@@ -8,7 +8,6 @@ public class BinarySearchTree {
 
     public void add(int value) {
         this.getRoot().addValue(value);
-
     }
 
     public Node getRoot() {
