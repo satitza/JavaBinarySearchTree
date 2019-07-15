@@ -11,7 +11,6 @@ public class MainApp {
         System.out.println("Root node instance : " + binarySearchTree.getRoot());
         System.out.println("Root node default value : " + binarySearchTree.getRoot().getKey());
 
-        System.out.println("Dept level : " + binarySearchTree.getTreeDept());
         printLine();
 
         Scanner scanner = new Scanner(System.in);
@@ -21,7 +20,7 @@ public class MainApp {
             if (command.equals("exit")) {
                 break;
             } else if (command.equals("dept")) {
-                System.out.println("Dept level : " + binarySearchTree.getTreeDept());
+                System.out.println("Tree dept level : " + binarySearchTree.getTreeDept());
             } else {
                 int key = Integer.parseInt(command);
                 binarySearchTree.add(key);

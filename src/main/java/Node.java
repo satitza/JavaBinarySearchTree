@@ -65,14 +65,8 @@ public class Node {
         return this.key;
     }
 
+    // get dept for child object WTF how do it ?
     public int getDept() {
-        if (this.getLeft() != null) {
-            return this.getLeft().getDept();
-        } else if (this.getRight() != null) {
-            return this.getRight().getDept();
-        } else {
-            return this.dept;
-        }
-
+        return this.dept;
     }
 }
