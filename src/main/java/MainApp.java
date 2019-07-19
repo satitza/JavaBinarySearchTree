@@ -7,26 +7,27 @@ public class MainApp {
         System.out.println("Binary search tree");
         printLine();
 
-        BinarySearchTree binarySearchTree = new BinarySearchTree(2);
+        BinarySearchTree binarySearchTree = new BinarySearchTree(50);
         System.out.println("Root node instance : " + binarySearchTree.getRoot());
         System.out.println("Root node default value : " + binarySearchTree.getRoot().getKey());
 
         printLine();
+        
+        binarySearchTree.add(30);
+        binarySearchTree.add(20);
+        binarySearchTree.add(40);
+        binarySearchTree.add(70);
+        binarySearchTree.add(60);
+        binarySearchTree.add(80);
 
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.print("Enter key for insert into tree : ");
-            String command = scanner.nextLine();
-            if (command.equals("exit")) {
-                break;
-            } else if (command.equals("dept")) {
-                System.out.println("Tree dept level : " + binarySearchTree.getTreeDept());
-            } else {
-                int key = Integer.parseInt(command);
-                binarySearchTree.add(key);
-                System.out.println("Added : " + key + " to tree");
-            }
-        }
+        Node node1 = binarySearchTree.search(binarySearchTree.getRoot(), 30);
+        System.out.println(node1);
+        System.out.println(node1.getKey());
+
+        Node node2 = binarySearchTree.search(binarySearchTree.getRoot(), 80);
+        System.out.println(node2);
+        System.out.println(node2.getKey());
+
     }
 
     public static void printLine() {

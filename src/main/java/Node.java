@@ -5,12 +5,10 @@ public class Node {
     private Node right;
 
     private int key;
-    private int dept;
 
-    public Node(Node parent, int key, int dept) {
+    public Node(Node parent, int key) {
         this.parent = parent;
         this.key = key;
-        this.dept = dept;
     }
 
     public Node getParent() {
@@ -21,7 +19,7 @@ public class Node {
     }
 
     public void addLeft(int key) {
-        this.left = new Node(this, key, this.dept + 1);
+        this.left = new Node(this, key);
     }
 
     public Node getLeft() {
@@ -32,7 +30,7 @@ public class Node {
     }
 
     public void addRight(int key) {
-        this.right = new Node(this, key, this.dept + 1);
+        this.right = new Node(this, key);
 
     }
 
@@ -65,8 +63,4 @@ public class Node {
         return this.key;
     }
 
-    // get dept for child object WTF how do it ?
-    public int getDept() {
-        return this.dept;
-    }
 }

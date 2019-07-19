@@ -3,7 +3,7 @@ public class BinarySearchTree {
     private Node root;
 
     public BinarySearchTree(int key) {
-        this.root = new Node(null, key, 1);
+        this.root = new Node(null, key);
     }
 
     public Node getRoot() {
@@ -13,15 +13,17 @@ public class BinarySearchTree {
         return null;
     }
 
-    public int getTreeDept() {
-        if (this.root.getDept() >= 1) {
-            return this.root.getDept();
-        }
-        return 0;
-    }
-
     public void add(int key) {
         this.getRoot().addKey(key);
     }
 
+    public Node search(Node node, int key) {
+        if (node.getKey() == key) {
+            return node;
+        } else if (node.getKey() > key) {
+            return this.search(node.getLeft(), key);
+        } else {
+            return this.search(node.getRight(), key);
+        }
+    }
 }
