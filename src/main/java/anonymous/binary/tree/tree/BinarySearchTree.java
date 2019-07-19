@@ -1,3 +1,5 @@
+package anonymous.binary.tree.tree;
+
 public class BinarySearchTree {
 
     private Node root;
@@ -26,4 +28,5 @@ public class BinarySearchTree {
             return this.search(node.getRight(), key);
         }
     }
+
 }

@@ -1,3 +1,5 @@
+package anonymous.binary.tree.tree;
+
 public class Node {
 
     private Node parent;
@@ -18,7 +20,7 @@ public class Node {
         return null;
     }
 
-    public void addLeft(int key) {
+    private void addLeft(int key) {
         this.left = new Node(this, key);
     }
 
@@ -29,7 +31,7 @@ public class Node {
         return null;
     }
 
-    public void addRight(int key) {
+    private void addRight(int key) {
         this.right = new Node(this, key);
 
     }

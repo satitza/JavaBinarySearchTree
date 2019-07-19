@@ -1,4 +1,7 @@
-import java.util.Scanner;
+package anonymous.binary.tree;
+
+import anonymous.binary.tree.tree.BinarySearchTree;
+import anonymous.binary.tree.tree.Node;
 
 public class MainApp {
 
@@ -12,7 +15,7 @@ public class MainApp {
         System.out.println("Root node default value : " + binarySearchTree.getRoot().getKey());
 
         printLine();
-        
+
         binarySearchTree.add(30);
         binarySearchTree.add(20);
         binarySearchTree.add(40);
