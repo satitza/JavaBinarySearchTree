@@ -17,19 +17,12 @@ public class BinarySearchTreeTest {
     }
 
     @Test
-    public void get_root_node_when_tree_created() {
-        try {
-
-            Assertions.assertTrue(binarySearchTree.getRoot() != null);
-
-        } catch (NodeNotFoundException ex) {
-            System.out.println(ex.getMessage());
-        }
-
+    public void get_root_node_when_tree_created() throws NodeNotFoundException {
+        Assertions.assertTrue(binarySearchTree.getRoot() != null);
     }
 
     @Test
-    public void test_search_key_from_tree() {
+    public void test_search_key_from_tree() throws NodeNotFoundException {
 
         binarySearchTree.add(30);
         binarySearchTree.add(20);
@@ -38,12 +31,7 @@ public class BinarySearchTreeTest {
         binarySearchTree.add(60);
         binarySearchTree.add(80);
 
-        try {
-            Assertions.assertTrue(binarySearchTree.search(this.binarySearchTree.getRoot(), 60).getKey() == 60);
-        } catch (NodeNotFoundException ex) {
-            System.out.println(ex.getMessage());
-        }
-
+        Assertions.assertTrue(binarySearchTree.search(this.binarySearchTree.getRoot(), 60).getKey() == 60);
     }
 
 }
