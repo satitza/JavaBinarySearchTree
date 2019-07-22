@@ -13,6 +13,7 @@ public class NodeTest {
         node = new Node(null, 10);
     }
 
+
     @Test
     public void add_5_to_root_should_left_be_5() {
 
