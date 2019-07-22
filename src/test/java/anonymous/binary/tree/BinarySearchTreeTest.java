@@ -20,8 +20,7 @@ public class BinarySearchTreeTest {
     public void get_root_node_when_tree_created() {
         try {
 
-            Node root = binarySearchTree.getRoot();
-            Assertions.assertTrue(binarySearchTree.getRoot() == root);
+            Assertions.assertTrue(binarySearchTree.getRoot() != null);
 
         } catch (NodeNotFoundException ex) {
             System.out.println(ex.getMessage());
